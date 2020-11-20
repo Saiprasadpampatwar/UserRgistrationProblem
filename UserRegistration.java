@@ -8,7 +8,6 @@ public class UserRegistration {
 	      System.out.println("Enter your first name: ");
 	      String name = sc.next();
 	      String regex = "[A-Z]{1}[a-zA-Z]{2,}";
-	      //Matching the given phone number with regular expression
 	      boolean result = name.matches(regex);
 	      if(result) {
 	         System.out.println("Given name is valid.");
