@@ -11,9 +11,9 @@ public class UserRegistration {
 	      //Matching the given phone number with regular expression
 	      boolean result = name.matches(regex);
 	      if(result) {
-	         System.out.println("Given name is valid");
+	         System.out.println("Given name is valid.");
 	      } else {
-	         System.out.println("Given name is not valid");
+	         System.out.println("Given name is not valid.");
 	      }
 
 }
