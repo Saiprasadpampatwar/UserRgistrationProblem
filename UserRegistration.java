@@ -1,10 +1,11 @@
 import java.util.*;
 public class UserRegistration {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	static Scanner sc = new Scanner(System.in);
+	
+	public void First_and_Last_Name()
+	{
 		System.out.println("Welcome to User Registration");
-		Scanner sc = new Scanner(System.in);
         System.out.println("Enter your first name: ");
         String fname = sc.next();
         System.out.println("Enter your last name: ");
@@ -17,6 +18,13 @@ public class UserRegistration {
         else {
          System.out.println("Given Name is not valid.");
         }
+        
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		UserRegistration user = new UserRegistration();
+		user.First_and_Last_Name();
+	}
 
-}
 }
