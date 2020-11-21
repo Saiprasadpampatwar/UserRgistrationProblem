@@ -44,9 +44,23 @@ public class UserRegistration {
         boolean result = (mobile.matches(regex) );
         if(result) {
         	System.out.println("Given mobile is valid.");
+        	PassWordRule1();
         } 
         else {
          System.out.println("Given mobile is not valid.");
+        }
+	}
+	
+	public void PassWordRule1() {
+		System.out.println("Enter Password with minimum 8 characters: ");
+        String password1 = sc.next();
+        String regex = ".{8,}";
+        boolean result = (password1.matches(regex) );
+        if(result) {
+        	System.out.println("Given password is valid.");
+        } 
+        else {
+         System.out.println("Given password is not valid.");
         }
 	}
 	public static void main(String[] args) {
