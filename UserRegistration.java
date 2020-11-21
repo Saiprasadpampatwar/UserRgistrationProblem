@@ -44,7 +44,7 @@ public class UserRegistration {
         boolean result = (mobile.matches(regex) );
         if(result) {
         	System.out.println("Given mobile is valid.");
-        	PassWordRule1();
+        	PassWordRule4();
         } 
         else {
          System.out.println("Given mobile is not valid.");
@@ -58,7 +58,7 @@ public class UserRegistration {
         boolean result = (password1.matches(regex) );
         if(result) {
         	System.out.println("Given password is valid.");
-        	PassWordRule2();
+        	//PassWordRule2();
         } 
         else {
          System.out.println("Given password is not valid.");
@@ -72,7 +72,7 @@ public class UserRegistration {
         boolean result = (password2.matches(regex) );
         if(result) {
         	System.out.println("Given password is valid.");
-        	PassWordRule3();
+        	//PassWordRule3();
         } 
         else {
          System.out.println("Given password is not valid.");
@@ -86,7 +86,20 @@ public class UserRegistration {
         boolean result = (password3.matches(regex) );
         if(result) {
         	System.out.println("Given password is valid.");
-        	
+        	//PassWordRule4();
+        } 
+        else {
+         System.out.println("Given password is not valid.");
+        }
+	}
+	
+	public void PassWordRule4() {
+		System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
+        String password4 = sc.next();
+        String regex = "(?=.*[@*&^%#-*+!])(?=.*[0-9])(?=.*[A-Z])(.{6,})";
+        boolean result = (password4.matches(regex) );
+        if(result) {
+        	System.out.println("Given password is valid.");    	
         } 
         else {
          System.out.println("Given password is not valid.");
