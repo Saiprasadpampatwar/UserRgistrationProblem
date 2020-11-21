@@ -14,11 +14,25 @@ public class UserRegistration {
         boolean result = (fname.matches(regex) && lname.matches(regex));
         if(result) {
         	System.out.println("Given Name is valid.");
+        	EmailValidation();
         } 
         else {
          System.out.println("Given Name is not valid.");
         }
         
+	}
+	
+	public void EmailValidation() {
+		System.out.println("Enter your Email: ");
+        String email = sc.next();
+        String regex = "^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+((?:\\.[a-z]{2,}){0,1}$)";
+        boolean result = (email.matches(regex) );
+        if(result) {
+        	System.out.println("Given email is valid.");
+        } 
+        else {
+         System.out.println("Given email is not valid.");
+        }
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
