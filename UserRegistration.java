@@ -106,11 +106,44 @@ public class UserRegistration {
         }
 	}
 	
+	public void ValidateEmail() {
+			
+			String regex="^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$";
+			ArrayList<String> validateMail = new ArrayList<>();
+			// valid email
+			validateMail.add("abc@yahoo.com");
+			validateMail.add("abc-100@yahoo.com");
+			validateMail.add("abc.100@yahoo.com");
+			validateMail.add("abc-100@abc.net");
+			validateMail.add("abc.100@abc.com.au");
+			validateMail.add("abc@1.com");
+			validateMail.add("abc@gmail.com.com");
+			validateMail.add("abc+100@gmail.com");
+			// invalid email
+			validateMail.add("abc-");
+			validateMail.add("abc@.com");
+			validateMail.add("abc@123gmail.a");
+			validateMail.add("abc123@.com");
+			validateMail.add("abc123@.com.com");
+			validateMail.add(".abc@abc.com");
+			validateMail.add("abc()*@gmail.com");
+			validateMail.add("abc@%*.com.com");
+			validateMail.add("abc..2002@.gmail.com");
+			validateMail.add("abc.@gmail.com");
+			validateMail.add("abc@abc@gmail.com");
+			validateMail.add("abc@gmail.com.1a");
+			validateMail.add("abc@gmail.com.aa.au");
+			for(String validate1 : validateMail) {
+				System.out.println(validate1+" "+(validate1.matches(regex)));
+			}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		UserRegistration user = new UserRegistration();
 		user.First_and_Last_Name();
+		user.ValidateEmail();
 	}
 
 }
