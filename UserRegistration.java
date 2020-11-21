@@ -29,9 +29,24 @@ public class UserRegistration {
         boolean result = (email.matches(regex) );
         if(result) {
         	System.out.println("Given email is valid.");
+        	MobileValidation();
         } 
         else {
          System.out.println("Given email is not valid.");
+        }
+	}
+	
+	public void MobileValidation() {
+		System.out.println("Enter your mobile number with country code space and number: ");
+		sc.nextLine();
+        String mobile = sc.nextLine();   
+        String regex = "([0-9]{2})[ ]{1}[7-9][0-9]{9}";
+        boolean result = (mobile.matches(regex) );
+        if(result) {
+        	System.out.println("Given mobile is valid.");
+        } 
+        else {
+         System.out.println("Given mobile is not valid.");
         }
 	}
 	public static void main(String[] args) {
