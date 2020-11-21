@@ -110,6 +110,7 @@ public class UserRegistration {
 			
 			String regex="^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$";
 			ArrayList<String> validateMail = new ArrayList<>();
+			System.out.println("Folling are the results of valid and invalid mails");
 			// valid email
 			validateMail.add("abc@yahoo.com");
 			validateMail.add("abc-100@yahoo.com");
