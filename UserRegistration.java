@@ -58,6 +58,20 @@ public class UserRegistration {
         boolean result = (password1.matches(regex) );
         if(result) {
         	System.out.println("Given password is valid.");
+        	PassWordRule2();
+        } 
+        else {
+         System.out.println("Given password is not valid.");
+        }
+	}
+	
+	public void PassWordRule2() {
+		System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
+        String password2 = sc.next();
+        String regex = "([A-Z])?(.{7,})";
+        boolean result = (password2.matches(regex) );
+        if(result) {
+        	System.out.println("Given password is valid.");
         } 
         else {
          System.out.println("Given password is not valid.");
