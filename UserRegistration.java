@@ -83,7 +83,7 @@ public class UserRegistration {
 		// TODO Auto-generated method stub
 		
 		UserRegistration user = new UserRegistration();
-		user.PassWordRule2();
+		user.First_and_Last_Name();
 	}
 
 }
