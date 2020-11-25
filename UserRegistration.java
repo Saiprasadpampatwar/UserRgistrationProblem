@@ -3,55 +3,63 @@ public class UserRegistration {
 
 	static Scanner sc = new Scanner(System.in);
 	
-	public void First_and_Last_Name()
+	public boolean firstName(String fname)
 	{
-		System.out.println("Welcome to User Registration");
-        System.out.println("Enter your first name: ");
-        String fname = sc.next();
-        System.out.println("Enter your last name: ");
-        String lname = sc.next();
+		
         String regex = "[A-Z]{1}[a-zA-Z]{2,}";
-        boolean result = (fname.matches(regex) && lname.matches(regex));
+        boolean result = (fname.matches(regex));
         if(result) {
-        	System.out.println("Given Name is valid.");
-        	EmailValidation();
+        	System.out.println("Given First Name is valid.");
         } 
         else {
-         System.out.println("Given Name is not valid.");
+         System.out.println("Given First Name is not valid.");
         }
+        return result;
         
 	}
 	
-	public void EmailValidation() {
-		System.out.println("Enter your Email: ");
-        String email = sc.next();
+	public boolean lastName(String lname)
+	{
+		
+        String regex = "[A-Z]{1}[a-zA-Z]{2,}";
+        boolean result = (lname.matches(regex));
+        if(result) {
+        	System.out.println("Given Last Name is valid.");
+        } 
+        else {
+         System.out.println("Given Last Name is not valid.");
+        }
+        return result;
+        
+	}
+	
+	public boolean emailValidation(String email) {
+		
         String regex = "^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+((?:\\.[a-z]{2,}){0,1}$)";
         boolean result = (email.matches(regex) );
         if(result) {
         	System.out.println("Given email is valid.");
-        	MobileValidation();
         } 
         else {
          System.out.println("Given email is not valid.");
         }
+        return result;
 	}
 	
-	public void MobileValidation() {
-		System.out.println("Enter your mobile number with country code space and number: ");
-		sc.nextLine();
-        String mobile = sc.nextLine();   
+	public boolean mobileValidation(String mobile) {
+		   
         String regex = "([0-9]{2})[ ]{1}[7-9][0-9]{9}";
         boolean result = (mobile.matches(regex) );
         if(result) {
         	System.out.println("Given mobile is valid.");
-        	PassWordRule4();
         } 
         else {
          System.out.println("Given mobile is not valid.");
         }
+        return result;
 	}
 	
-	public void PassWordRule1() {
+	public void passWordRule1() {
 		System.out.println("Enter Password with minimum 8 characters: ");
         String password1 = sc.next();
         String regex = ".{8,}";
@@ -65,7 +73,7 @@ public class UserRegistration {
         }
 	}
 	
-	public void PassWordRule2() {
+	public void passWordRule2() {
 		System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
         String password2 = sc.next();
         String regex = "(?=.*[A-Z])(.{7,})";
@@ -79,7 +87,7 @@ public class UserRegistration {
         }
 	}
 	
-	public void PassWordRule3() {
+	public void passWordRule3() {
 		System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
         String password3 = sc.next();
         String regex = "(?=.*[0-9])(?=.*[A-Z])(.{6,})";
@@ -93,9 +101,8 @@ public class UserRegistration {
         }
 	}
 	
-	public void PassWordRule4() {
-		System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
-        String password4 = sc.next();
+	public boolean passWordRule4(String password4) {
+		
         String regex = "(?=.*[@*&^%#-*+!])(?=.*[0-9])(?=.*[A-Z])(.{6,})";
         boolean result = (password4.matches(regex) );
         if(result) {
@@ -104,7 +111,15 @@ public class UserRegistration {
         else {
          System.out.println("Given password is not valid.");
         }
+        return result;
 	}
+	
+	public String analyseMood(String message) {
+		if(message.contains("Sad"))
+			return "SAD";
+		return "HAPPY";
+	}
+	
 	
 	public void ValidateEmail() {
 			
@@ -143,7 +158,24 @@ public class UserRegistration {
 		// TODO Auto-generated method stub
 		
 		UserRegistration user = new UserRegistration();
-		user.First_and_Last_Name();
+		System.out.println("Welcome to User Registration");
+        System.out.println("Enter your first name: ");
+        String fname = sc.next();
+        user.firstName(fname);
+        System.out.println("Enter your last name: ");
+        String lname = sc.next();	
+		user.lastName(lname);
+		System.out.println("Enter your Email: ");
+        String email = sc.next();
+        user.emailValidation(email);
+        System.out.println("Enter your mobile number with country code space and number: ");
+        sc.nextLine();
+        String mobile = sc.nextLine();
+        
+        user.mobileValidation(mobile);
+        System.out.println("Enter Password with minimum 8 characters and atleast 1 upper case character: ");
+        String password4 = sc.next();
+        user.passWordRule4(password4);
 		user.ValidateEmail();
 	}
 
