@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2020-11-26T09:58:12" hostname="DESKTOP-9G5SK1M" time="0.03">
+<testsuite name="UserRegistrationTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2020-11-28T09:20:59" hostname="DESKTOP-9G5SK1M" time="0.039">
   <properties/>
   <testcase name="testPassword_returnFalse" classname="UserRegistrationTest" time="0.005"/>
-  <testcase name="givenNullMobile" classname="UserRegistrationTest" time="0.008"/>
+  <testcase name="givenNullMobile" classname="UserRegistrationTest" time="0.012"/>
   <testcase name="givenNullEmail" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenNullLastName" classname="UserRegistrationTest" time="0.0"/>
+  <testcase name="givenNullLastName" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="testLastName_returnFalse" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="givenEmptyMobile" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenEmptyLastName" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="testMobile_returnTrue" classname="UserRegistrationTest" time="0.0"/>
+  <testcase name="givenEmptyMobile" classname="UserRegistrationTest" time="0.0"/>
+  <testcase name="givenEmptyLastName" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="testMobile_returnTrue" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenEmptyEmail" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="testFirstName_returnFalse" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="givenNullMassage" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="testPassword_returnTrue" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="testEmail_returnFalse" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="testFirstName_returnFalse" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenNullMassage" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="testPassword_returnTrue" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="testEmail_returnFalse" classname="UserRegistrationTest" time="0.003"/>
   <testcase name="givenEmptyMassage" classname="UserRegistrationTest" time="0.0"/>
-  <testcase name="givenNullFirstName" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="testEmail_returnTrue" classname="UserRegistrationTest" time="0.002"/>
+  <testcase name="givenNullFirstName" classname="UserRegistrationTest" time="0.0"/>
+  <testcase name="testEmail_returnTrue" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenNullPassword" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="testMobile_returnFalse" classname="UserRegistrationTest" time="0.0"/>
   <testcase name="givenEmptyFirstName" classname="UserRegistrationTest" time="0.001"/>
@@ -27,7 +27,7 @@
 GIVEN_NULL will give message  Null not allowed please Enter again 
 GIVEN_NULL will give message  Null not allowed please Enter again 
 GIVEN_NULL will give message  Null not allowed please Enter again 
-Given Last Name is not valid.
+Given First Name is not valid.
 GIVEN_EMPTY will give message   Empty input not Allowed please Enter again
 GIVEN_EMPTY will give message   Empty input not Allowed please Enter again
 Given mobile is valid.
@@ -41,7 +41,7 @@ GIVEN_NULL will give message  Null not allowed please Enter again
 Given mobile is not valid.
 GIVEN_EMPTY will give message   Empty input not Allowed please Enter again
 Given First Name is valid.
-Given Last Name is valid.
+Given First Name is valid.
 GIVEN_EMPTY will give message   Empty input not Allowed please Enter again
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

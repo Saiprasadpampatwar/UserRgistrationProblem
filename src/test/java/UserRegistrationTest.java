@@ -51,7 +51,7 @@ public class UserRegistrationTest{
     public void givenNullFirstName() throws UserRegistrationException {
 
         try {
-            boolean result = userRegistration.firstName(null);
+            boolean result = userRegistration.validateFirstName.validateUser(null);
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_NULL,e.type);
@@ -62,7 +62,7 @@ public class UserRegistrationTest{
     public void givenEmptyFirstName() throws UserRegistrationException {
 
         try {
-            boolean result = userRegistration.firstName("");
+            boolean result = userRegistration.validateFirstName.validateUser("");
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_EMPTY,e.type);
@@ -73,7 +73,7 @@ public class UserRegistrationTest{
     public void givenNullLastName() throws UserRegistrationException {
 
         try {
-            boolean result = userRegistration.lastName(null);
+            boolean result = userRegistration.validateLastName.validateUser(null);
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_NULL,e.type);
@@ -84,7 +84,7 @@ public class UserRegistrationTest{
     public void givenEmptyLastName() throws UserRegistrationException {
 
         try {
-            boolean result = userRegistration.lastName("");
+            boolean result = userRegistration.validateLastName.validateUser("");
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_EMPTY,e.type);
@@ -94,7 +94,7 @@ public class UserRegistrationTest{
     @Test
     public void givenNullEmail() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.emailValidation(null);
+            boolean result = userRegistration.validateEmail.validateUser(null);
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_NULL,e.type);
@@ -105,7 +105,7 @@ public class UserRegistrationTest{
     @Test
     public void givenEmptyEmail() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.emailValidation("");
+            boolean result = userRegistration.validateEmail.validateUser("");
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_EMPTY,e.type);
@@ -116,7 +116,7 @@ public class UserRegistrationTest{
     @Test
     public void givenNullMobile() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.mobileValidation(null);
+            boolean result = userRegistration.validateMobile.validateUser(null);
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_NULL,e.type);
@@ -127,7 +127,7 @@ public class UserRegistrationTest{
     @Test
     public void givenEmptyMobile() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.emailValidation("");
+            boolean result = userRegistration.validateMobile.validateUser("");
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_EMPTY,e.type);
@@ -138,7 +138,7 @@ public class UserRegistrationTest{
     @Test
     public void givenNullPassword() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.passWordRule4(null);
+            boolean result = userRegistration.validatePassword.validateUser(null);
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_NULL,e.type);
@@ -149,7 +149,7 @@ public class UserRegistrationTest{
     @Test
     public void givenEmptyPassword() throws UserRegistrationException {
         try {
-            boolean result = userRegistration.passWordRule4("");
+            boolean result = userRegistration.validatePassword.validateUser("");
         }catch (UserRegistrationException e){
             System.out.println(e.type+" will give message  "+ e.getMessage());
             Assert.assertEquals(UserRegistrationException.ExceptionType.GIVEN_EMPTY,e.type);
@@ -159,69 +159,69 @@ public class UserRegistrationTest{
 
     @Test
     public void testFirstName_returnTrue() throws UserRegistrationException {
-        boolean result = userRegistration.firstName("Sai");
+        boolean result = userRegistration.validateFirstName.validateUser("Sai");
         Assert.assertTrue(result);
 
     }
 
     @Test
     public void testFirstName_returnFalse() throws UserRegistrationException {
-        boolean result = userRegistration.firstName("sAi");
+        boolean result = userRegistration.validateFirstName.validateUser("sAi");
         Assert.assertFalse(result);
 
     }
     @Test
     public void testLastName_returnTrue() throws UserRegistrationException{
-        boolean result = userRegistration.lastName("Prasad");
+        boolean result = userRegistration.validateLastName.validateUser("Prasad");
         Assert.assertTrue(result);
 
     }
 
     @Test
     public void testLastName_returnFalse() throws UserRegistrationException{
-        boolean result = userRegistration.lastName("pRasad");
+        boolean result = userRegistration.validateLastName.validateUser("pRasad");
         Assert.assertFalse(result);
 
     }
 
     @Test
     public void testEmail_returnTrue() throws UserRegistrationException{
-        boolean result = userRegistration.emailValidation("Prasad@gmail.com");
+        boolean result = userRegistration.validateEmail.validateUser("Prasad@gmail.com");
         Assert.assertTrue(result);
 
     }
 
     @Test
     public void testEmail_returnFalse() throws UserRegistrationException{
-        boolean result = userRegistration.emailValidation("abc@.com");
+        boolean result = userRegistration.validateEmail.validateUser("abc@.com");
         Assert.assertFalse(result);
 
     }
 
     @Test
     public void testMobile_returnTrue() throws UserRegistrationException{
-        boolean result = userRegistration.mobileValidation("91 8983100055");
+        boolean result = userRegistration.validateMobile.validateUser("91 8983100055");
         Assert.assertTrue(result);
 
     }
 
     @Test
     public void testMobile_returnFalse() throws UserRegistrationException{
-        boolean result = userRegistration.mobileValidation("8983100055");
+        boolean result = userRegistration.validateMobile.validateUser("8983100055");
         Assert.assertFalse(result);
 
     }
 
     @Test
     public void testPassword_returnTrue() throws UserRegistrationException{
-        boolean result = userRegistration.passWordRule4("Sai@12345");
+        boolean result = userRegistration.validatePassword.validateUser("Sai@12345");
         Assert.assertTrue(result);
 
     }
 
     @Test
     public void testPassword_returnFalse() throws UserRegistrationException{
-        boolean result = userRegistration.passWordRule4("sa@ipbdb12");
+        boolean result = userRegistration.validatePassword.validateUser("sa@ipbdb12");
         Assert.assertFalse(result);
 
     }

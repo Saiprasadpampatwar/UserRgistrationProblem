@@ -1,5 +1,8 @@
 import java.util.Scanner;
-
+@FunctionalInterface
+interface Validation{
+    public  boolean validateUser(String input) throws UserRegistrationException;
+}
 public class UserRegistration {
     static Scanner sc = new Scanner(System.in);
 
@@ -16,7 +19,7 @@ public class UserRegistration {
         }
     }
 
-    public boolean firstName(String fname) throws UserRegistrationException {
+    Validation validateFirstName = (String fname)->{
         isEmptyorNullString(fname);
         String regex = "[A-Z]{1}[a-zA-Z]{2,}";
         boolean result = (fname.matches(regex));
@@ -27,24 +30,22 @@ public class UserRegistration {
             System.out.println("Given First Name is not valid.");
         }
         return result;
+    };
 
-    }
-
-    public boolean lastName(String lname) throws UserRegistrationException {
+    Validation validateLastName = (String lname)->{
         isEmptyorNullString(lname);
         String regex = "[A-Z]{1}[a-zA-Z]{2,}";
         boolean result = (lname.matches(regex));
         if(result) {
-            System.out.println("Given Last Name is valid.");
+            System.out.println("Given First Name is valid.");
         }
         else {
-            System.out.println("Given Last Name is not valid.");
+            System.out.println("Given First Name is not valid.");
         }
         return result;
+    };
 
-    }
-
-    public boolean emailValidation(String email) throws UserRegistrationException {
+    Validation validateEmail = (String email) ->{
         isEmptyorNullString(email);
         String regex = "^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+((?:\\.[a-z]{2,}){0,1}$)";
         boolean result = (email.matches(regex) );
@@ -55,9 +56,9 @@ public class UserRegistration {
             System.out.println("Given email is not valid.");
         }
         return result;
-    }
+    };
 
-    public boolean mobileValidation(String mobile) throws UserRegistrationException {
+    Validation validateMobile = (String mobile) -> {
         isEmptyorNullString(mobile);
         String regex = "([0-9]{2})[ ]{1}[7-9][0-9]{9}";
         boolean result = (mobile.matches(regex) );
@@ -68,7 +69,9 @@ public class UserRegistration {
             System.out.println("Given mobile is not valid.");
         }
         return result;
-    }
+    };
+
+
 
     public void passWordRule1() {
         System.out.println("Enter Password with minimum 8 characters: ");
@@ -112,7 +115,7 @@ public class UserRegistration {
         }
     }
 
-    public boolean passWordRule4(String password4) throws UserRegistrationException {
+    Validation validatePassword = (String password4)->{
         isEmptyorNullString(password4);
         String regex = "(?=.*[@*&^%#-*+!])(?=.*[0-9])(?=.*[A-Z])(.{6,})";
         boolean result = (password4.matches(regex) );
@@ -123,7 +126,8 @@ public class UserRegistration {
             System.out.println("Given password is not valid.");
         }
         return result;
-    }
+    };
+
 
     public String analyseMood(String message) throws UserRegistrationException {
         isEmptyorNullString(message);
