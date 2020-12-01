@@ -15,4 +15,10 @@ In Use Case 7 password is validated (minimum 8 character with atleast one [A-Z] 
 
 In Use Case 8 password is validated (any minimum 8 character with atleast one [A-Z], atleast special character,and atleast one numerical value)
 
-All given Email validations are done.
+In Use Case 9 All given Email validations are done.
+
+In Use Case 10 Written JUnit Test to validate the User Entry for First Name, Last Name, Email, Mobile, and Password.
+
+In Use Case 11 Written JUnit Parameterised Test to validate multiple entry for the Email Address.
+
+In Use Case 12 Refactored the Code to throw custom exceptions in case of Invalid User Details
